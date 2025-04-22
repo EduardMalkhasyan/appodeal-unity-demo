@@ -26,29 +26,29 @@ namespace AppodealSample
 
         #region Appodeal Demo Scene UI Components
 
-        [SerializeField] private List<GameObject>   panels;
-        [SerializeField] private Button             nextPanelButton;
-        [SerializeField] private Button             previousPanelButton;
-        [SerializeField] private Toggle             loggingToggle;
-        [SerializeField] private Toggle             testingToggle;
-        [SerializeField] private Toggle             safeAreaToggle;
-        [SerializeField] private Toggle             mrecInitializationToggle;
-        [SerializeField] private Toggle             bannerInitializationToggle;
-        [SerializeField] private Toggle             interstitialInitializationToggle;
-        [SerializeField] private Toggle             rewardedVideoInitializationToggle;
-        [SerializeField] private Toggle             smartBannerToggle;
-        [SerializeField] private Toggle             tabletBannerToggle;
-        [SerializeField] private Toggle             bannerAnimationToggle;
-        [SerializeField] private Toggle             interstitialAutoCacheToggle;
-        [SerializeField] private Toggle             rewardedVideoAutoCacheToggle;
-        [SerializeField] private Text               pluginVersionText;
-        [SerializeField] private Text               interstitialButtonText;
-        [SerializeField] private Text               rewardedVideoButtonText;
-        [SerializeField] private Toggle             allServicesToggle;
-        [SerializeField] private Toggle             adjustServiceToggle;
-        [SerializeField] private Toggle             appsFlyerServiceToggle;
-        [SerializeField] private Toggle             facebookServiceToggle;
-        [SerializeField] private Toggle             firebaseServiceToggle;
+        [SerializeField] private List<GameObject> panels;
+        [SerializeField] private Button nextPanelButton;
+        [SerializeField] private Button previousPanelButton;
+        [SerializeField] private Toggle loggingToggle;
+        [SerializeField] private Toggle testingToggle;
+        [SerializeField] private Toggle safeAreaToggle;
+        [SerializeField] private Toggle mrecInitializationToggle;
+        [SerializeField] private Toggle bannerInitializationToggle;
+        [SerializeField] private Toggle interstitialInitializationToggle;
+        [SerializeField] private Toggle rewardedVideoInitializationToggle;
+        [SerializeField] private Toggle smartBannerToggle;
+        [SerializeField] private Toggle tabletBannerToggle;
+        [SerializeField] private Toggle bannerAnimationToggle;
+        [SerializeField] private Toggle interstitialAutoCacheToggle;
+        [SerializeField] private Toggle rewardedVideoAutoCacheToggle;
+        [SerializeField] private Text pluginVersionText;
+        [SerializeField] private Text interstitialButtonText;
+        [SerializeField] private Text rewardedVideoButtonText;
+        [SerializeField] private Toggle allServicesToggle;
+        [SerializeField] private Toggle adjustServiceToggle;
+        [SerializeField] private Toggle appsFlyerServiceToggle;
+        [SerializeField] private Toggle facebookServiceToggle;
+        [SerializeField] private Toggle firebaseServiceToggle;
 
         #endregion
 
@@ -57,9 +57,9 @@ namespace AppodealSample
 #if UNITY_EDITOR && !UNITY_ANDROID && !UNITY_IOS
         private const string AppKey = "";
 #elif UNITY_ANDROID
-        private const string AppKey = "fee50c333ff3825fd6ad6d38cff78154de3025546d47a84f";
+        private const string AppKey = "d0d023a31b5a1d0825cad595685a51f60ee51370a7d50005";
 #elif UNITY_IOS
-        private const string AppKey = "466de0d625e01e8811c588588a42a55970bc7c132649eede";
+        private const string AppKey = "1cc373c250f85663e0dee8b49387f09c45f3aca5acaddb44";
 #else
 	    private const string AppKey = "";
 #endif
@@ -203,7 +203,7 @@ namespace AppodealSample
 
             Appodeal.SetUserId("1");
             Appodeal.SetCustomFilter(PredefinedKeys.UserAge, 18);
-            Appodeal.SetCustomFilter(PredefinedKeys.UserGender, (int) AppodealUserGender.Male);
+            Appodeal.SetCustomFilter(PredefinedKeys.UserGender, (int)AppodealUserGender.Male);
             Appodeal.ResetCustomFilter(PredefinedKeys.UserGender);
 
             Appodeal.SetExtraData("testKey", "testValue");
@@ -225,8 +225,8 @@ namespace AppodealSample
 
             Appodeal.SetAutoCache(AppodealAdType.Interstitial, interstitialAutoCacheToggle.isOn);
             Appodeal.SetAutoCache(AppodealAdType.RewardedVideo, rewardedVideoAutoCacheToggle.isOn);
-            interstitialButtonText.text =  interstitialAutoCacheToggle.isOn ? InterstitialCaching : InterstitialCache;
-            rewardedVideoButtonText.text =  rewardedVideoAutoCacheToggle.isOn ? RewardedVideoCaching : RewardedVideoCache;
+            interstitialButtonText.text = interstitialAutoCacheToggle.isOn ? InterstitialCaching : InterstitialCache;
+            rewardedVideoButtonText.text = rewardedVideoAutoCacheToggle.isOn ? RewardedVideoCaching : RewardedVideoCache;
 
             SetAppodealCallbacks();
 
@@ -443,7 +443,7 @@ namespace AppodealSample
             output = networksList == null ? String.Empty : String.Join(", ", (networksList.ToArray()));
             Debug.Log($"[APDUnity] [Appodeal] GetNetworks() for Mrec: {output}");
 
-            pluginVersionText.text = $"Appodeal Unity Plugin v{ AppodealVersions.GetPluginVersion() } & SDK v{ Appodeal.GetNativeSDKVersion() }";
+            pluginVersionText.text = $"Appodeal Unity Plugin v{AppodealVersions.GetPluginVersion()} & SDK v{Appodeal.GetNativeSDKVersion()}";
 
             Appodeal.ShowMediationDebugger();
         }

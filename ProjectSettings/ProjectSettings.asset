@@ -161,10 +161,10 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
-    Android: com.appodeal.test
+    Android: com.appodeal.testing.eduard.malkhasyan.android
     Standalone: com.Appodeal.UnityPluginDemo
     Tizen: ame.appodeal.testing
-    iPhone: com.appodeal.testing
+    iPhone: com.appodeal.testing.eduard.malkhasyan.ios
     tvOS: ame.appodeal.testing
   buildNumber:
     Standalone: 0
